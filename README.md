@@ -31,6 +31,17 @@ The installer creates **iDPRT SP420 (Native)**. It preserves existing printers a
 
 **Signing status:** the downloadable installer is unsigned and is not notarized by Apple. The ARM64 filter has an ad-hoc signature, which does not verify the developer's identity. Checksums detect a mismatched download; they do not replace Developer ID signing or notarization. If you are uncomfortable installing an unsigned download, [build the package locally](#build-from-source). Do not disable Gatekeeper or SIP to install this driver.
 
+If macOS blocks the installer because its developer cannot be verified, review the download and use **System Settings → Privacy & Security → Open Anyway** for that package, following [Apple's instructions](https://support.apple.com/en-us/102445). A managed Mac may prohibit this exception.
+
+Optional, for users who already have GitHub CLI: verify the package's GitHub build provenance with the release workflow and tag constrained explicitly:
+
+```sh
+gh attestation verify idprt-sp420-macos-native-driver-0.3.0.pkg \
+  --repo krn65/idprt-sp420-macos-native-driver \
+  --signer-workflow krn65/idprt-sp420-macos-native-driver/.github/workflows/release.yml \
+  --source-ref refs/tags/v0.3.0 --deny-self-hosted-runners
+```
+
 ### Paper size
 
 The default is **100 × 150 mm**, matching the original driver's actual default dimensions. For true 4 × 6-inch stock, select **4 × 6 inches (101.6 × 152.4 mm)**. Use **Actual Size / 100%** when the source label already has the correct dimensions.
