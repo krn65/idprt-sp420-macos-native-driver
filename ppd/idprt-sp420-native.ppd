@@ -1,0 +1,192 @@
+*PPD-Adobe: "4.3"
+*% Derived from MIT-licensed hubooy/deli-tspl-cups; see accompanying LICENSE.
+*FormatVersion: "4.3"
+*FileVersion: "1.0"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName: "SP420NAT.PPD"
+*Manufacturer: "iDPRT"
+*Product: "(iDPRT SP420 Native)"
+*ModelName: "iDPRT SP420 Native"
+*ShortNickName: "iDPRT SP420 Native"
+*NickName: "iDPRT SP420 Native TSPL, 0.2"
+*PSVersion: "(3010.000) 0"
+*LanguageLevel: "3"
+*ColorDevice: False
+*DefaultColorSpace: Gray
+*FileSystem: False
+*Throughput: "1"
+*LandscapeOrientation: Plus90
+*TTRasterizer: Type42
+*cupsVersion: 2.3
+*cupsModelNumber: 0
+*cupsManualCopies: False
+*cupsFilter: "application/vnd.cups-raster 100 /Library/Printers/SP420Native/rastertosp420"
+*cupsLanguages: "en"
+*1284DeviceID: "MFG:iDPRT;MDL:SP420;CMD:TSPL;CLS:PRINTER;"
+*HWMargins: 0 0 0 0
+*VariablePaperSize: True
+*MaxMediaWidth: "306.14"
+*MaxMediaHeight: "850.39"
+*CustomPageSize True: "pop pop pop <</PageSize[5 -2 roll]/ImagingBBox null>>setpagedevice"
+*ParamCustomPageSize Width: 1 points 141.73 306.14
+*ParamCustomPageSize Height: 2 points 70.87 850.39
+*ParamCustomPageSize WidthOffset: 3 points 0 0
+*ParamCustomPageSize HeightOffset: 4 points 0 0
+*ParamCustomPageSize Orientation: 5 int 0 0
+
+*OpenUI *PageSize/Media Size: PickOne
+*OrderDependency: 10 AnySetup *PageSize
+*DefaultPageSize: w283h425
+*PageSize w288h432/4 x 6 inches (101.6 x 152.4 mm): "<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*PageSize w283h425/100 x 150 mm: "<</PageSize[283.46 425.20]/ImagingBBox null>>setpagedevice"
+*PageSize w283h510/100 x 180 mm: "<</PageSize[283.46 510.24]/ImagingBBox null>>setpagedevice"
+*PageSize w283h283/100 x 100 mm: "<</PageSize[283.46 283.46]/ImagingBBox null>>setpagedevice"
+*PageSize w283h340/100 x 120 mm: "<</PageSize[283.46 340.16]/ImagingBBox null>>setpagedevice"
+*PageSize w283h567/100 x 200 mm: "<</PageSize[283.46 566.93]/ImagingBBox null>>setpagedevice"
+*PageSize w215h369/76 x 130 mm: "<</PageSize[215.43 368.50]/ImagingBBox null>>setpagedevice"
+*PageSize w227h170/80 x 60 mm: "<</PageSize[226.77 170.08]/ImagingBBox null>>setpagedevice"
+*PageSize w227h142/80 x 50 mm: "<</PageSize[226.77 141.73]/ImagingBBox null>>setpagedevice"
+*PageSize w198h142/70 x 50 mm: "<</PageSize[198.43 141.73]/ImagingBBox null>>setpagedevice"
+*PageSize w170h113/60 x 40 mm: "<</PageSize[170.08 113.39]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion/Media Size: PickOne
+*OrderDependency: 10 AnySetup *PageRegion
+*DefaultPageRegion: w283h425
+*PageRegion w288h432/4 x 6 inches (101.6 x 152.4 mm): "<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*PageRegion w283h425/100 x 150 mm: "<</PageSize[283.46 425.20]/ImagingBBox null>>setpagedevice"
+*PageRegion w283h510/100 x 180 mm: "<</PageSize[283.46 510.24]/ImagingBBox null>>setpagedevice"
+*PageRegion w283h283/100 x 100 mm: "<</PageSize[283.46 283.46]/ImagingBBox null>>setpagedevice"
+*PageRegion w283h340/100 x 120 mm: "<</PageSize[283.46 340.16]/ImagingBBox null>>setpagedevice"
+*PageRegion w283h567/100 x 200 mm: "<</PageSize[283.46 566.93]/ImagingBBox null>>setpagedevice"
+*PageRegion w215h369/76 x 130 mm: "<</PageSize[215.43 368.50]/ImagingBBox null>>setpagedevice"
+*PageRegion w227h170/80 x 60 mm: "<</PageSize[226.77 170.08]/ImagingBBox null>>setpagedevice"
+*PageRegion w227h142/80 x 50 mm: "<</PageSize[226.77 141.73]/ImagingBBox null>>setpagedevice"
+*PageRegion w198h142/70 x 50 mm: "<</PageSize[198.43 141.73]/ImagingBBox null>>setpagedevice"
+*PageRegion w170h113/60 x 40 mm: "<</PageSize[170.08 113.39]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: w283h425
+*ImageableArea w288h432/4 x 6 inches (101.6 x 152.4 mm): "0 0 288 432"
+*ImageableArea w283h425/100 x 150 mm: "0 0 283.46 425.20"
+*ImageableArea w283h510/100 x 180 mm: "0 0 283.46 510.24"
+*ImageableArea w283h283/100 x 100 mm: "0 0 283.46 283.46"
+*ImageableArea w283h340/100 x 120 mm: "0 0 283.46 340.16"
+*ImageableArea w283h567/100 x 200 mm: "0 0 283.46 566.93"
+*ImageableArea w215h369/76 x 130 mm: "0 0 215.43 368.50"
+*ImageableArea w227h170/80 x 60 mm: "0 0 226.77 170.08"
+*ImageableArea w227h142/80 x 50 mm: "0 0 226.77 141.73"
+*ImageableArea w198h142/70 x 50 mm: "0 0 198.43 141.73"
+*ImageableArea w170h113/60 x 40 mm: "0 0 170.08 113.39"
+
+*DefaultPaperDimension: w283h425
+*PaperDimension w288h432/4 x 6 inches (101.6 x 152.4 mm): "288 432"
+*PaperDimension w283h425/100 x 150 mm: "283.46 425.20"
+*PaperDimension w283h510/100 x 180 mm: "283.46 510.24"
+*PaperDimension w283h283/100 x 100 mm: "283.46 283.46"
+*PaperDimension w283h340/100 x 120 mm: "283.46 340.16"
+*PaperDimension w283h567/100 x 200 mm: "283.46 566.93"
+*PaperDimension w215h369/76 x 130 mm: "215.43 368.50"
+*PaperDimension w227h170/80 x 60 mm: "226.77 170.08"
+*PaperDimension w227h142/80 x 50 mm: "226.77 141.73"
+*PaperDimension w198h142/70 x 50 mm: "198.43 141.73"
+*PaperDimension w170h113/60 x 40 mm: "170.08 113.39"
+
+*OpenUI *Resolution/Resolution: PickOne
+*OrderDependency: 20 AnySetup *Resolution
+*DefaultResolution: 203dpi
+*Resolution 203dpi/203 dpi: "<</HWResolution[203 203]/cupsColorSpace 0/cupsBitsPerColor 8/cupsBitsPerPixel 8/cupsColorOrder 0>>setpagedevice"
+*CloseUI: *Resolution
+
+*OpenUI *ColorModel/Color Mode: PickOne
+*OrderDependency: 20 AnySetup *ColorModel
+*DefaultColorModel: Gray
+*ColorModel Gray/Grayscale: "<</cupsColorSpace 0/cupsBitsPerColor 8/cupsBitsPerPixel 8/cupsColorOrder 0>>setpagedevice"
+*CloseUI: *ColorModel
+
+*OpenGroup: Printer/Printer Settings
+
+*OpenUI *Darkness/Darkness (DENSITY): PickOne
+*OrderDependency: 30 AnySetup *Darkness
+*DefaultDarkness: None
+*Darkness None/Use printer setting: ""
+*Darkness 0/0 (lightest): ""
+*Darkness 1/1: ""
+*Darkness 2/2: ""
+*Darkness 3/3: ""
+*Darkness 4/4: ""
+*Darkness 5/5: ""
+*Darkness 6/6 (default): ""
+*Darkness 7/7: ""
+*Darkness 8/8: ""
+*Darkness 9/9: ""
+*Darkness 10/10: ""
+*Darkness 11/11: ""
+*Darkness 12/12: ""
+*Darkness 13/13: ""
+*Darkness 14/14: ""
+*Darkness 15/15 (darkest): ""
+*CloseUI: *Darkness
+
+*OpenUI *PrintSpeed/Print Speed (SPEED): PickOne
+*OrderDependency: 30 AnySetup *PrintSpeed
+*DefaultPrintSpeed: None
+*PrintSpeed None/Use printer setting: ""
+*PrintSpeed 1/1 inch/s (25 mm/s): ""
+*PrintSpeed 2/2 inch/s (51 mm/s): ""
+*PrintSpeed 3/3 inch/s (76 mm/s): ""
+*PrintSpeed 4/4 inch/s (102 mm/s): ""
+*PrintSpeed 5/5 inch/s: ""
+*PrintSpeed 6/6 inch/s: ""
+*CloseUI: *PrintSpeed
+
+*OpenUI *MediaTracking/Media Tracking: PickOne
+*OrderDependency: 30 AnySetup *MediaTracking
+*DefaultMediaTracking: None
+*MediaTracking None/Use printer setting: ""
+*MediaTracking Gap/Gap (die-cut labels): ""
+*MediaTracking BlackMark/Black Mark: ""
+*MediaTracking Continuous/Continuous: ""
+*CloseUI: *MediaTracking
+
+*OpenUI *GapHeight/Gap or Mark Height: PickOne
+*OrderDependency: 30 AnySetup *GapHeight
+*DefaultGapHeight: 2
+*GapHeight 1/1 mm: ""
+*GapHeight 2/2 mm: ""
+*GapHeight 3/3 mm: ""
+*GapHeight 4/4 mm: ""
+*GapHeight 5/5 mm: ""
+*GapHeight 6/6 mm: ""
+*GapHeight 7/7 mm: ""
+*GapHeight 8/8 mm: ""
+*GapHeight 9/9 mm: ""
+*GapHeight 10/10 mm: ""
+*CloseUI: *GapHeight
+
+
+*OpenUI *Rotate/Rotate Image (software): PickOne
+*OrderDependency: 30 AnySetup *Rotate
+*DefaultRotate: 0
+*Rotate 0/None: ""
+*Rotate 180/180 degrees: ""
+*CloseUI: *Rotate
+
+
+*OpenUI *Halftone/Halftoning: PickOne
+*OrderDependency: 30 AnySetup *Halftone
+*DefaultHalftone: Threshold
+*Halftone Threshold/Threshold (crisp text and barcodes): ""
+*Halftone Ordered/Ordered Dither: ""
+*Halftone Diffusion/Error Diffusion (photos): ""
+*CloseUI: *Halftone
+
+
+
+*CloseGroup: Printer
+
+*DefaultFont: Courier
+*Font Courier: Standard "(1.05)" Standard ROM
+*Font Helvetica: Standard "(1.05)" Standard ROM
+*Font Times-Roman: Standard "(1.05)" Standard ROM

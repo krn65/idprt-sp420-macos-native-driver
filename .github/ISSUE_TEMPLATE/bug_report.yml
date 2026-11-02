@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a reproducible SP420 native-driver problem.
+body:
+  - type: markdown
+    attributes:
+      value: Do not upload real shipping labels, addresses, tracking numbers, printer serial numbers, credentials, or unredacted CUPS logs. Use a synthetic label and redact any diagnostic output.
+  - type: input
+    id: version
+    attributes:
+      label: Driver release and macOS version
+      placeholder: v0.3.0 / macOS 27.0.1
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Printer model and connection
+      placeholder: iDPRT SP420 / USB
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps, expected result, and actual result
+    validations:
+      required: true

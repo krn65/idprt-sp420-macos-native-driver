@@ -1,0 +1,35 @@
+#!/bin/sh
+# Refuse path redirection before Installer writes the privileged payload.
+set -eu
+export LC_ALL=C
+[ "$(/usr/bin/id -u)" -eq 0 ] || exit 1
+[ "${3:-/}" = / ] || { echo "Install on the running system volume." >&2; exit 1; }
+check_path() {
+  path=$1
+  if [ -L "$path" ]; then
+    echo "Refusing symbolic link at an installation path." >&2
+    exit 1
+  fi
+  if [ -e "$path" ]; then
+    [ "$(/usr/bin/stat -f %u "$path")" -eq 0 ] || {
+      echo "Installation paths must be owned by root." >&2; exit 1;
+    }
+    mode=$(/usr/bin/stat -f %Lp "$path")
+    [ "$((0$mode & 0022))" -eq 0 ] || {
+      echo "Installation paths must not be writable by group or others." >&2; exit 1;
+    }
+  fi
+}
+for path in /Library /Library/Printers /Library/Printers/SP420Native \
+  /Library/Printers/SP420Native/rastertosp420 \
+  /Library/Printers/SP420Native/idprt-sp420-native.ppd \
+  /Library/Printers/SP420Native/SP420-Native.ppd \
+  /Library/Printers/SP420Native/LICENSE \
+  /Library/Printers/SP420Native/uninstall.sh; do
+  check_path "$path"
+done
+jobs=$(/usr/bin/lpstat -o iDPRT_SP420_Native 2>/dev/null || true)
+[ -z "$jobs" ] || {
+  echo "Wait for native SP420 jobs to finish before installing." >&2
+  exit 1
+}

@@ -1,0 +1,38 @@
+#!/bin/sh
+# Configure only the dedicated queue; preserve other printers and the default.
+set -eu
+export LC_ALL=C
+[ "$(/usr/bin/id -u)" -eq 0 ] || exit 1
+[ "${3:-/}" = / ] || exit 1
+driver_dir=/Library/Printers/SP420Native
+queue=iDPRT_SP420_Native
+[ ! -L "$driver_dir" ] && [ -d "$driver_dir" ] || exit 1
+[ "$(/usr/bin/stat -f %u "$driver_dir")" -eq 0 ] || exit 1
+/usr/bin/codesign --verify "$driver_dir/rastertosp420"
+valid_uri() {
+  [ "${#1}" -le 2048 ] || return 1
+  case "$1" in usb://iDPRT/SP420|usb://iDPRT/SP420\?*) ;; *) return 1 ;; esac
+  # Shell pattern matching sees embedded newlines that line-based grep misses.
+  case "$1" in *[![:graph:]]*) return 1 ;; esac
+  return 0
+}
+uri=
+for saved_queue in "$queue" iDPRT_SP420; do
+  line=$(/usr/bin/lpstat -v "$saved_queue" 2>/dev/null || true)
+  candidate=${line#*: }
+  if valid_uri "$candidate"; then uri=$candidate; break; fi
+done
+if [ -z "$uri" ]; then
+  uri=$(/usr/sbin/lpinfo --include-schemes usb -v 2>/dev/null | \
+    /usr/bin/awk '$1 == "direct" && $2 ~ /^usb:\/\/iDPRT\/SP420([?]|$)/ {print $2; exit}')
+fi
+if valid_uri "$uri"; then
+  /usr/sbin/lpadmin -p "$queue" -E -D "iDPRT SP420 (Native)" -v "$uri" \
+    -P "$driver_dir/idprt-sp420-native.ppd" -o printer-is-shared=false
+else
+  echo "Driver installed. Connect SP420 and add it using $driver_dir/idprt-sp420-native.ppd." >&2
+fi
+# Migrate the earlier local package without touching official vendor files.
+if [ -f "$driver_dir/SP420-Native.ppd" ] && [ ! -L "$driver_dir/SP420-Native.ppd" ]; then
+  /bin/rm "$driver_dir/SP420-Native.ppd"
+fi
